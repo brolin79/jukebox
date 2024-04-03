@@ -1,18 +1,19 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react';
-import { getAuth } from 'firebase/auth';
+import { useState } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { LoggedNavigation } from './routes/LoggedNavigation';
+import { Auth } from './pages';
 
 export default function App() {
 
+  const [user, setUser] = useState(undefined);
   const auth = getAuth();
 
-  console.log(auth);
+  onAuthStateChanged(getAuth(), (user) => {
+    setUser(user);
+  });
 
-  return (
-    <div>
-      <h1>Musicfy 1.0</h1>
-      <Button primary>Play</Button>
-      <Button secondary>Pause</Button>
-    </div>
-  );
+  if (user === undefined) { return null; }
+
+  return  user ? <LoggedNavigation /> : <Auth />;
+  
 }
