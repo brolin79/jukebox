@@ -1,0 +1,18 @@
+@import "~/src/scss/index";
+
+.artist-page {
+    
+    &__slider {
+        margin: 35px;
+    
+        > h2 {
+            color: $font-grey;
+            font-weight: 100;
+            font-size: 1.5rem;
+            border-bottom: 0.5px solid;
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+        }
+    }
+
+}

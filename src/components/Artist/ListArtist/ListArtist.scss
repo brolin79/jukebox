@@ -1,0 +1,29 @@
+@import "~/src/scss/index";
+
+.list-artists {
+
+    &__artist{
+
+        margin-top: 35px !important;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        > div {
+            width: 150px;
+            height: 110px;
+            background-position: center;
+            background-size: cover;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+
+        > p {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+}
