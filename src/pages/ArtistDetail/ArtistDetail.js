@@ -1,20 +1,31 @@
 import React, {useState, useEffect } from 'react';
-import { Artist } from  '../../api';
+import { Artist, Album } from  '../../api';
 import { useParams } from 'react-router-dom';
 import { BannerArtist } from '../../components/Artist';
+import { Slider } from '../../components/Shared';
 import './ArtistDetail.scss';
 
 const ArtistController = new Artist();
+const AlbumController = new Album();
 
 export function ArtistDetail (props) {
 
-    const [artist, setArtist] = useState(null);
     const { id } = useParams();
+    const [artist, setArtist] = useState(null);
+    const [albums, setAlbums] = useState(null);
 
     useEffect(() => {
         (async () => {
             const response = await ArtistController.getArtist(id);
             setArtist(response);
+        })();
+    }, [id]);
+
+    useEffect(() => {
+        (async () => {
+            const response = await AlbumController.getAlbumsByArtist(id);
+            console.log(response);
+            setAlbums(response);
         })();
     }, [id]);
 
@@ -29,6 +40,7 @@ export function ArtistDetail (props) {
 
             <div className='artist-page__slider'>
                 <h2>Albumes</h2>
+                <Slider data={albums} basePath="album_detail" />
             </div>
 
             <div className='artist-page__slider'>

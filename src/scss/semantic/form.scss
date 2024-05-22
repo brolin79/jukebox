@@ -17,6 +17,43 @@
             }
         }
 
+        .dropdown {
+            
+            background-color: $background-secondary !important;
+            border-color: $border-primary;;
+        
+            &:hover{
+                .menu {
+                    border-color: $background-secondary !important;
+                }
+            }
+
+            input {
+                background-color: $background-secondary !important;
+                border-color: $border-primary;
+                color: $font-light !important;
+
+                &:hover, &:focus, &:active {
+                    background-color: $background-secondary !important;
+                }
+            }
+
+            .menu {
+                background-color: $background-secondary !important;
+                border-color: $border-primary;
+                
+                .item {
+                    border-color: $border-primary;
+                }
+
+                .message {
+                    color: $font-light;
+                    opacity: 0.6;
+                }
+            }
+            
+        }
+
         .ui.button.primary {
             background-color: $primary-color;
             color: $font-light;
@@ -33,6 +70,13 @@
             }
 
             i {
+                color: $danger;
+            }
+        }
+
+        .ui.dropdown {
+            .text {
+                background: transparent;
                 color: $danger;
             }
         }

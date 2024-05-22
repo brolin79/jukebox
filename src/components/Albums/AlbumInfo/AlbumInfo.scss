@@ -1,0 +1,18 @@
+@import "~/src/scss/index";
+
+.album-info {
+
+    display: flex;
+
+    > img {
+        width: 200px;
+        margin-right: 25px;
+    }
+
+    > div {
+        > h1,p {
+            color: $font-grey;
+        }
+    }
+
+}

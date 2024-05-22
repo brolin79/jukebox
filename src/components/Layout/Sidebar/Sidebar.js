@@ -3,6 +3,7 @@ import { Menu } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
 import { BasicModal } from '../../Shared';
 import { NewArtistForm } from '../../Artist/NewArtistForm';
+import { AddAlbumForm } from '../../Albums';
 import './Sidebar.scss';
 
 export function Sidebar() {
@@ -31,7 +32,7 @@ export function Sidebar() {
         }
         if (type == "album"){    
             setTitleModal("Crear nuevo album");
-            setContentModal("<p>Formulario de creacion de album</p>");
+            setContentModal(<AddAlbumForm onClose={closeModal} />);
         }
         if (type == "song"){    
             setTitleModal("Crear nueva cancion");
