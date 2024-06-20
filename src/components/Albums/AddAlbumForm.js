@@ -7,7 +7,7 @@ import { map } from 'lodash';
 import { noImage } from '../../assets';
 import { Artist, Album, Storage } from '../../api';
 import { v4 as uuidv4 } from "uuid";
-import '../../scss/AddAlbumForm.scss';
+import '../../scss/components/AddAlbumForm.scss';
 import { initialValues, validationSchema} from "./AddAlbumForm.data";
 
 const ArtistController = new Artist();

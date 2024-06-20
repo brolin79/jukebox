@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon, Image } from 'semantic-ui-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Auth, User } from '../../../api';
-import './Header.scss';
+import { Auth, User } from '../../api';
+import '../../scss/components/Header.scss';
 
 const auth = new Auth();
 const user = new User();

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
-import { BasicModal } from '../../Shared';
-import { NewArtistForm } from '../../Artist/NewArtistForm';
-import { AddAlbumForm } from '../../Albums';
-import { AddSongForm } from '../../Song';
-import './Sidebar.scss';
+import { BasicModal } from '../Shared';
+import { NewArtistForm } from '../Artist/NewArtistForm';
+import { AddAlbumForm } from '../Albums';
+import '../../scss/components/Sidebar.scss';
 
 export function Sidebar() {
 
@@ -35,10 +34,6 @@ export function Sidebar() {
             setTitleModal("Crear nuevo album");
             setContentModal(<AddAlbumForm onClose={closeModal} />);
         }
-        if (type === "song"){    
-            setTitleModal("Crear nueva cancion");
-            setContentModal(<AddSongForm onClose={closeModal} />);
-        }
         setShowModal(true);
     };
     
@@ -55,9 +50,8 @@ export function Sidebar() {
             </Menu>
 
             <Menu secondary vertical fluid>
-                <Menu.Item name='Nueva cancion' icon='plus' link onClick= { () => openModal("song") } />
-                <Menu.Item name='Nuevo album' icon='plus' link onClick= { () => openModal("album") } />
                 <Menu.Item name='Nuevo artista' icon='plus' link onClick= { () => openModal("artist") } />
+                <Menu.Item name='Nuevo album' icon='plus' link onClick= { () => openModal("album") } />
             </Menu>
 
         </div>

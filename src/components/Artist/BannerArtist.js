@@ -1,5 +1,5 @@
 import React from "react";
-import '../../scss/BannerArtist.scss';
+import '../../scss/components/BannerArtist.scss';
 
 export function BannerArtist(props) { 
 

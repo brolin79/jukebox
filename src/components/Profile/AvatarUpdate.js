@@ -3,7 +3,7 @@ import { Image } from "semantic-ui-react";
 import { useDropzone } from 'react-dropzone';
 import { User, Storage } from '../../api';
 import { defaultUser } from '../../assets';
-import '../../scss/AvatarUpdate.scss';
+import '../../scss/components/AvatarUpdate.scss';
 
 const user = new User();
 const storage = new Storage();

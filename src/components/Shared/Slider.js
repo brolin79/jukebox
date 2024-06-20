@@ -3,8 +3,8 @@ import { Image, Icon } from 'semantic-ui-react';
 import Slick from 'react-slick';
 import { map } from 'lodash';
 import { Link } from 'react-router-dom';
-import { usePlayer } from "../../../hooks";
-import './Slider.scss';
+import { usePlayer } from "../../hooks";
+import '../../scss/components/Slider.scss';
 
 
 const settings = {

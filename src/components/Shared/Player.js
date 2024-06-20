@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Progress, Icon} from 'semantic-ui-react';
 import ReactPlayer from 'react-player';
-import { usePlayer } from "../../../hooks";
-import './Player.scss';
+import { usePlayer } from "../../hooks";
+import '../../scss/components/Player.scss';
 
 export function Player() { 
 

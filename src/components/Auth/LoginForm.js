@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Form, Icon} from "semantic-ui-react";
 import { useFormik } from "formik"
 import {initialValues, validationSchema} from "./LoginForm.data";
-import '../../scss/LoginForm.scss';
+import '../../scss/components/LoginForm.scss';
 import { Auth } from "../../api";
 
 const auth = new Auth();

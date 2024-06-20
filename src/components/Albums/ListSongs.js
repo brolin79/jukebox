@@ -1,8 +1,8 @@
 import React from "react";
 import { Table, Icon } from "semantic-ui-react";
 import { size, map } from "lodash";
-import { usePlayer } from "../../../hooks";
-import "./ListSongs.scss";
+import { usePlayer } from "../../hooks";
+import "../../scss/components/ListSongs.scss";
 
 export function ListSongs(props) {
   const { songs, miniature } = props;
@@ -13,7 +13,7 @@ export function ListSongs(props) {
   };
 
   if (size(songs) === 0) {
-    return <p className="no-songs">Este album aun no tiene canciónes</p>;
+    return <p className="no-songs">Este album aun no tiene canciones</p>;
   }
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Loader } from "semantic-ui-react";
 import { map, size } from 'lodash';
 import { Link } from 'react-router-dom';
-import '../../scss/ListArtist.scss';
+import '../../scss/components/ListArtist.scss';
 
 export function ListArtist(props) { 
 

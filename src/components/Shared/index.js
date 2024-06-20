@@ -1,3 +1,3 @@
-export * from './Player';
-export * from './BasicModal';
-export * from './Slider';
+export { BasicModal } from "./BasicModal";
+export { Player } from "./Player";
+export { Slider } from "./Slider";

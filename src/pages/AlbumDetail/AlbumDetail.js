@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
 import { Album, Song } from '../../api';
-import { AlbumInfo } from '../../components/Albums';
-import { ListSongs } from "../../components/Song";
+import { AlbumInfo, ListSongs } from '../../components/Albums';
 import './AlbumDetail.scss';
 
 const AlbumController = new Album();

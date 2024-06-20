@@ -1,3 +1,3 @@
-export * from "./Header";
-export * from "./Sidebar";
-export * from "./Footer";
+export { Footer } from "./Footer.js";
+export { Header } from "./Header.js";
+export { Sidebar } from "./Sidebar.js";

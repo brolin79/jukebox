@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Icon } from "semantic-ui-react";
-import './BasicModal.scss';
+import '../../scss/components/BasicModal.scss';
 
 export function BasicModal(props) { 
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image, Input, Icon } from 'semantic-ui-react';
-import { Player } from '../../Shared';
-import { usePlayer } from "../../../hooks";
-import './Footer.scss';
+import { Player } from '../Shared';
+import { usePlayer } from "../../hooks";
+import '../../scss/components/Footer.scss';
 
 export function Footer() { 
 

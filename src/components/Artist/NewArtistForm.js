@@ -7,7 +7,7 @@ import classNames  from 'classnames';
 import { Storage, Artist } from '../../api';
 import { noImage } from '../../assets';
 import { v4 as uuidv4 } from "uuid";
-import '../../scss/NewArtistForm.scss';
+import '../../scss/components/NewArtistForm.scss';
 import { initialValues, validationSchema} from "./NewArtistForm.data";
 
 const StorageController = new Storage();
