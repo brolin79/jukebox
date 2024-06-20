@@ -8,7 +8,7 @@ export function AuthOptions(props) {
 
     return (
         <div className='auth-options'>
-            <h1>Millones de canciones, gratis en Musicfy</h1>
+            <h1>Millones de canciones con Jukebox</h1>
 
             <Button className='register' onClick={openRegister}>
                 Registrate gratis

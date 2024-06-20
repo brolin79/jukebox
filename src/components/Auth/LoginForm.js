@@ -35,7 +35,7 @@ export function LoginForm (props) {
 
     return (
         <div className='login-form'>
-            <h1>Música para todos</h1>
+            <h1>Bienvenid@ de nuevo</h1>
 
             <Form onSubmit={ formik.handleSubmit }>
 

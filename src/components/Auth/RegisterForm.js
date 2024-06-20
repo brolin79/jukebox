@@ -32,7 +32,7 @@ export function RegisterForm (props) {
 
     return (
         <div className='register-form'>
-            <h1>Empieza a escuchar con tu cuenta Musicfy</h1>
+            <h1>Tu cuenta Jukebox</h1>
 
             <Form onSubmit={ formik.handleSubmit }>
                 <Form.Input
@@ -82,7 +82,7 @@ export function RegisterForm (props) {
                     <Icon name='arrow left' /> Volver
                 </p>
                 <p>
-                    ¿Ya tienes Musicfy?
+                    ¿Ya tienes cuenta?
                     <span onClick={openLogin}>Inicia sesión</span>
                 </p>
             </div>
