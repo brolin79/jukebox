@@ -1,8 +1,8 @@
 import React, {useState, useEffect } from "react";
 import { Image } from "semantic-ui-react";
 import { Link } from 'react-router-dom';
-import { Artist } from '../../../api';
-import './AlbumInfo.scss';
+import { Artist } from '../../api/';
+import '../../scss/AlbumInfo.scss';
 
 const ArtistController = new Artist();
 

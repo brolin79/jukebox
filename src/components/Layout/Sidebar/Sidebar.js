@@ -3,7 +3,7 @@ import { Menu } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
 import { BasicModal } from '../../Shared';
 import { NewArtistForm } from '../../Artist/NewArtistForm';
-import { AddAlbumForm } from '../../Albums';
+import { AddAlbumForm } from '../../Albums/AddAlbumForm';
 import { AddSongForm } from '../../Song';
 import './Sidebar.scss';
 
@@ -27,15 +27,15 @@ export function Sidebar() {
 
     
     const openModal = (type) => { 
-        if (type == "artist"){    
+        if (type === "artist"){    
             setTitleModal("Crear nuevo artista");
             setContentModal(<NewArtistForm onClose={closeModal} />);
         }
-        if (type == "album"){    
+        if (type === "album"){    
             setTitleModal("Crear nuevo album");
             setContentModal(<AddAlbumForm onClose={closeModal} />);
         }
-        if (type == "song"){    
+        if (type === "song"){    
             setTitleModal("Crear nueva cancion");
             setContentModal(<AddSongForm onClose={closeModal} />);
         }

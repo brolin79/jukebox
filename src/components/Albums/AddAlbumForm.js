@@ -4,10 +4,10 @@ import { Form, Image } from "semantic-ui-react";
 import { useFormik } from "formik";
 import { useDropzone } from 'react-dropzone';
 import { map } from 'lodash';
-import { noImage } from '../../../assets';
-import { Artist, Album, Storage } from '../../../api';
+import { noImage } from '../../assets';
+import { Artist, Album, Storage } from '../../api';
 import { v4 as uuidv4 } from "uuid";
-import './AddAlbumForm.scss';
+import '../../scss/AddAlbumForm.scss';
 import { initialValues, validationSchema} from "./AddAlbumForm.data";
 
 const ArtistController = new Artist();
