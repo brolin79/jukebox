@@ -11,7 +11,7 @@ export function AuthOptions(props) {
             <h1>Millones de canciones con Jukebox</h1>
 
             <Button className='register' onClick={openRegister}>
-                Registrate gratis
+                Registrate gratis  
             </Button>
             <Button className='login' onClick={openLogin}>
                 Inicia sesión
