@@ -1,3 +1,3 @@
-export * from "./AuthOptions";
-export * from "./LoginForm";
-export * from "./RegisterForm";
+export { AuthOptions } from "./AuthOptions.js";
+export { LoginForm } from "./LoginForm.js";
+export { RegisterForm } from "./RegisterForm.js"

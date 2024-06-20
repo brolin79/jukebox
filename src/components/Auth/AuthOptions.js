@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "semantic-ui-react";
-import './AuthOptions.scss';
+import '../../scss/AuthOptions.scss';
 
 export function AuthOptions(props) {
 

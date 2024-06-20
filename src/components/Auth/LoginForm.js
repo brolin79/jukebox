@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import {Icon, Form} from "semantic-ui-react";
+import {Form, Icon} from "semantic-ui-react";
 import { useFormik } from "formik"
-import {initialValues, validationSchema} from "./RegisterForm.data";
-import './RegisterForm.scss';
-import { Auth } from "../../../api";
+import {initialValues, validationSchema} from "./LoginForm.data";
+import '../../scss/LoginForm.scss';
+import { Auth } from "../../api";
 
 const auth = new Auth();
 
-export function RegisterForm (props) {
+export function LoginForm (props) {
 
-    const { openLogin, goBack } = props;
+    const { openRegister, goBack } = props;
+
     const [showPassword, setShowPassword] = useState(false);
+
+    const [showError, setError] = useState(null);
 
     const onShowPassword = () => {
         setShowPassword(!showPassword);
@@ -22,19 +25,20 @@ export function RegisterForm (props) {
         validationSchema: validationSchema(),
         onSubmit: async (formData) => {
             try {
-                await auth.register(formData.email, formData.password);
+                await auth.login(formData.email, formData.password);
             }
             catch (error) {
-                alert(error);
+                setError(true);
             }
         },
     });
 
     return (
-        <div className='register-form'>
-            <h1>Empieza a escuchar con tu cuenta Musicfy</h1>
+        <div className='login-form'>
+            <h1>Música para todos</h1>
 
             <Form onSubmit={ formik.handleSubmit }>
+
                 <Form.Input
                     name='email'
                     type='text'
@@ -61,29 +65,25 @@ export function RegisterForm (props) {
                     error={formik.errors.password}
                 />
 
-                <Form.Input
-                    name='username'
-                    type='text'
-                    placeholder='Dinos tu nombre'
-                    icon='user circle outline'
-                    onChange={formik.handleChange}
-                    value={formik.values.username}
-                    error={formik.errors.username}
-                />
-
                 <Form.Button type="submit" primary fluid loading={ formik.isSubmitting } >
-                    Continuar
+                    Iniciar Sesión
                 </Form.Button>
 
             </Form>
 
-            <div className='register-form__options'>
+            <div className='login-form__error' style={{ display: showError ? "block" : "none" }}>
+                <p>
+                    <span>Email o contraseña no valido, revisa tus datos</span>
+                </p>
+            </div>
+
+            <div className='login-form__options'>
                 <p onClick={goBack}>
                     <Icon name='arrow left' /> Volver
                 </p>
                 <p>
-                    ¿Ya tienes Musicfy?
-                    <span onClick={openLogin}>Inicia sesión</span>
+                    ¿No tienes cuenta?
+                    <span onClick={openRegister}>Registrate</span>
                 </p>
             </div>
 
