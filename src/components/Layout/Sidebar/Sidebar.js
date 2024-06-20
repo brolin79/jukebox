@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { BasicModal } from '../../Shared';
 import { NewArtistForm } from '../../Artist/NewArtistForm';
 import { AddAlbumForm } from '../../Albums';
+import { AddSongForm } from '../../Song';
 import './Sidebar.scss';
 
 export function Sidebar() {
@@ -36,7 +37,7 @@ export function Sidebar() {
         }
         if (type == "song"){    
             setTitleModal("Crear nueva cancion");
-            setContentModal("<p>Formulario de creacion de cancion</p>");
+            setContentModal(<AddSongForm onClose={closeModal} />);
         }
         setShowModal(true);
     };

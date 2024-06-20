@@ -1,6 +1,14 @@
 @import "~/src/scss/index";
 
-.artist-page {
+.home-page {
+  &__banner {
+    height: 250px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
   &__slider {
     margin: 50px;
 
@@ -12,19 +20,5 @@
       padding-bottom: 8px;
       margin-bottom: 30px;
     }
-
-    img {
-      width: 150px;
-      object-fit: cover;
-    }
-
-    h3 {
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: 100;
-      color: $font-light;
-    }
-
-
   }
 }

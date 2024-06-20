@@ -24,7 +24,6 @@ export function ArtistDetail (props) {
     useEffect(() => {
         (async () => {
             const response = await AlbumController.getAlbumsByArtist(id);
-            console.log(response);
             setAlbums(response);
         })();
     }, [id]);
@@ -41,10 +40,6 @@ export function ArtistDetail (props) {
             <div className='artist-page__slider'>
                 <h2>Albumes</h2>
                 <Slider data={albums} basePath="album_detail" />
-            </div>
-
-            <div className='artist-page__slider'>
-                <h2>Canciones</h2>
             </div>
 
         </div>
