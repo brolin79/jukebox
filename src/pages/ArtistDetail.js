@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react';
-import { Artist, Album } from  '../../api';
+import { Artist, Album } from  '../api';
 import { useParams } from 'react-router-dom';
-import { BannerArtist } from '../../components/Artist';
-import { Slider } from '../../components/Shared';
-import './ArtistDetail.scss';
+import { BannerArtist } from '../components/Artist';
+import { Slider } from '../components/Shared';
+import '../scss/pages/ArtistDetail.scss';
 
 const ArtistController = new Artist();
 const AlbumController = new Album();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Sidebar, Header, Footer } from '../../components/Layout';
-import './LoggedLayout.scss';
+import { Sidebar, Header, Footer } from '.';
+import '../../scss/components/LoggedLayout.scss';
 
 export function LoggedLayout (props) {
 

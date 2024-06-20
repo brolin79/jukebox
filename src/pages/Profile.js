@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
-import { User } from '../../api';
-import { BasicModal } from '../../components/Shared';
+import { User } from '../api';
+import { BasicModal } from '../components/Shared';
 import { 
     AvatarUpdate, 
     DisplayNameForm, 
     EmailForm,
     ChangePassForm
-} from '../../components/Profile';
-import './Profile.scss';
+} from '../components/Profile';
+import '../scss/pages/Profile.scss';
 
 const user = new User();
 

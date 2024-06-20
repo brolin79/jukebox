@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { AuthOptions, RegisterForm, LoginForm } from "../../components/Auth";
+import { AuthOptions, RegisterForm, LoginForm } from "../components/Auth";
 import { Image } from "semantic-ui-react";
-import {logoNameWhite} from "../../assets";
-import './Auth.scss';
+import {logoNameWhite} from "../assets";
+import '../scss/pages/Auth.scss';
 
 export function Auth () {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, Artists, ArtistDetail, Albums, AlbumDetail, Profile } from '../pages';
-import { LoggedLayout } from '../layouts';
+import { LoggedLayout } from '../components/Layout';
 
 export function LoggedNavigation () {
     return (

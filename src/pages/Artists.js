@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
-import { Artist } from  '../../api';
-import { ListArtist } from '../../components/Artist';
-import './Artists.scss';
+import { Artist } from  '../api';
+import { ListArtist } from '../components/Artist';
+import '../scss/pages/Artists.scss';
 
 const ArtistController = new Artist();
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Album } from '../../api';
-import {  ListAlbums } from '../../components/Albums/ListAlbums';
-import './Albums.scss';
+import { Album } from '../api';
+import {  ListAlbums } from '../components/Albums/ListAlbums';
+import '../scss/pages/Albums.scss';
 
 const AlbumController = new Album();
 

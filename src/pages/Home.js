@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Artist, Album, Song } from "../../api";
-import { Slider } from "../../components/Shared";
-import { bannerHome } from "../../assets";
-import "./Home.scss";
+import { Artist, Album, Song } from "../api";
+import { Slider } from "../components/Shared";
+import { bannerHome } from "../assets";
+import "../scss/pages/Home.scss";
 
 //const artistController = new Artist();
 //const albumController = new Album();

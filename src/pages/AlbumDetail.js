@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
-import { Album, Song } from '../../api';
-import { AlbumInfo, ListSongs } from '../../components/Albums';
-import './AlbumDetail.scss';
+import { Album, Song } from '../api';
+import { AlbumInfo, ListSongs } from '../components/Albums';
+import '../scss/pages/AlbumDetail.scss';
 
 const AlbumController = new Album();
 const songController = new Song();
