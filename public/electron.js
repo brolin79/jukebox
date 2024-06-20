@@ -14,9 +14,10 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1500,
     height: 1000,
-    title: "Musicfy",
+    title: "JUKEBOX",
     // titleBarStyle: "hiddenInset",
     // resizable: false,
+    // kiosk: true
   });
   mainWindow.loadURL(
     isDev
