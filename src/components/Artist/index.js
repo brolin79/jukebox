@@ -1,3 +1,3 @@
-export * from './NewArtistForm';
-export * from './ListArtist';
-export * from './BannerArtist';
+export { BannerArtist } from "./BannerArtist.js";
+export { ListArtist } from "./ListArtist.js";
+export { NewArtistForm } from "./NewArtistForm.js";

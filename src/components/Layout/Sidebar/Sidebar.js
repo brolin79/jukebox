@@ -3,7 +3,7 @@ import { Menu } from 'semantic-ui-react';
 import { Link, useLocation } from 'react-router-dom';
 import { BasicModal } from '../../Shared';
 import { NewArtistForm } from '../../Artist/NewArtistForm';
-import { AddAlbumForm } from '../../Albums/AddAlbumForm';
+import { AddAlbumForm } from '../../Albums';
 import { AddSongForm } from '../../Song';
 import './Sidebar.scss';
 

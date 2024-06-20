@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import { Form, Image } from 'semantic-ui-react';
 import { useDropzone } from 'react-dropzone';
-import { Auth, User } from '../../../api';
+import { Auth, User } from '../../api';
 import { useFormik } from "formik";
 import classNames  from 'classnames';
-import { Storage, Artist } from '../../../api';
-import { noImage } from '../../../assets';
+import { Storage, Artist } from '../../api';
+import { noImage } from '../../assets';
 import { v4 as uuidv4 } from "uuid";
-import './NewArtistForm.scss';
+import '../../scss/NewArtistForm.scss';
 import { initialValues, validationSchema} from "./NewArtistForm.data";
 
 const StorageController = new Storage();
