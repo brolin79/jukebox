@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "semantic-ui-react";
 import { useFormik } from "formik";
-import { User } from '../../../api';
+import { User } from '../../api';
 import { initialValues, validationSchema} from "./DisplayNameForm.data";
 
 const user = new User();

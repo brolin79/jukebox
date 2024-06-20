@@ -1,4 +1,4 @@
-export * from './AvatarUpdate';
-export * from './DisplayNameForm';
-export * from './EmailForm';
-export * from './ChangePassForm';
+export { AvatarUpdate } from "./AvatarUpdate";
+export { DisplayNameForm } from "./DisplayNameForm";
+export { EmailForm } from "./EmailForm";
+export { ChangePassForm } from "./ChangePassForm";
