@@ -11,6 +11,7 @@
 # production
 /build
 /src/assets
+/public/storage
 
 # misc
 .DS_Store

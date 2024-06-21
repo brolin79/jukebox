@@ -8,9 +8,11 @@ export function ListAlbums(props) {
 
     const { albums } = props;
 
+    const root = window.location.origin;
+
     if (size(albums) === 0) {
         return (
-            <Loader active inline="centered" size="large">Cargando...</Loader>
+            <p>Este artista no tiene albumes aun</p>
         );
     }
 
@@ -25,7 +27,11 @@ export function ListAlbums(props) {
                         to={`/album_detail/${album.id}`}
                         className="list-albums__album"
                     >
-                        <Image src={album.image} alt={album.name} className="list-albums__cover" />
+                        <Image 
+                            src={root + "/storage/" + album.artist  + "/" + album.image} 
+                            alt={album.name} 
+                            className="list-albums__cover" 
+                        />
                         <p>{album.name}</p>
                     </Grid.Column>
                 ))}

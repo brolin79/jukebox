@@ -12,7 +12,9 @@ export function AlbumInfo(props) {
 
     const [artistData, setArtistData] = useState(null);
 
-    
+    const root = window.location.origin;
+    const ruta = root + '/storage/';
+
     useEffect(() => {
         (async () => {
             const response = await ArtistController.getArtist(artist);
@@ -23,7 +25,7 @@ export function AlbumInfo(props) {
     return (
 
     <div className="album-info">
-        <Image src={image} alt={name} />
+        <Image src={ruta + artist + "/" + image} alt={name} />
         <div>
             <h1>{name}</h1>
             {artistData && <Link to={`/artist_detail/${artistData.id}`}>{artistData.name}</Link>}

@@ -4,13 +4,11 @@ import { useDropzone } from 'react-dropzone';
 import { Auth, User } from '../../api';
 import { useFormik } from "formik";
 import classNames  from 'classnames';
-import { Storage, Artist } from '../../api';
+import { Artist } from '../../api';
 import { noImage } from '../../assets';
-import { v4 as uuidv4 } from "uuid";
 import '../../scss/components/NewArtistForm.scss';
 import { initialValues, validationSchema} from "./NewArtistForm.data";
 
-const StorageController = new Storage();
 const ArtistController = new Artist();
 
 export function NewArtistForm(props) { 
@@ -18,6 +16,7 @@ export function NewArtistForm(props) {
     const { onClose } = props;
 
     const [image, setImage] = useState(null);
+    
 
     const onDrop = useCallback(acceptedFiles => {
         const file = acceptedFiles[0];
@@ -35,10 +34,9 @@ export function NewArtistForm(props) {
             try {
 
                 const { file, name } = formData;
-                const response = await StorageController.uploadFile( file, "artists", uuidv4() );
-                const url = await StorageController.getUrlFile(response.metadata.fullPath);
+                var filename = file.name;
 
-                await ArtistController.create(url, name);
+                await ArtistController.create(filename, name);
                 onClose();
 
             } catch (error) {

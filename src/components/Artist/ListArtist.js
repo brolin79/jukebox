@@ -8,6 +8,9 @@ export function ListArtist(props) {
 
     const { artists } = props;
 
+    const root = window.location.origin;
+    const ruta = root + '/storage/';
+
     if (size(artists) === 0) {
         return (
             <Loader active inline="centered" size="large">Cargando...</Loader>
@@ -24,7 +27,7 @@ export function ListArtist(props) {
                         to={`/artist_detail/${artist.id}`}
                         className="list-artists__artist"
                     >
-                        <div style={{ backgroundImage: `url(${artist.image})` }} />
+                        <div style={{ backgroundImage: `url(${ruta + artist.id + "/" +artist.image})` }} />
                         <p>{artist.name}</p>
                     </Grid.Column>
                 ))}

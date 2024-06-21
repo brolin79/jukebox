@@ -5,14 +5,12 @@ import { useFormik } from "formik";
 import { useDropzone } from 'react-dropzone';
 import { map } from 'lodash';
 import { noImage } from '../../assets';
-import { Artist, Album, Storage } from '../../api';
-import { v4 as uuidv4 } from "uuid";
+import { Artist, Album } from '../../api';
 import '../../scss/components/AddAlbumForm.scss';
 import { initialValues, validationSchema} from "./AddAlbumForm.data";
 
 const ArtistController = new Artist();
 const AlbumController = new Album();
-const StorageController = new Storage();
 
 
 export function AddAlbumForm(props) { 
@@ -41,11 +39,9 @@ export function AddAlbumForm(props) {
         validateOnChange: false,
         onSubmit: async (formData) => {
             try {
-                const { image, name, artist } = formData;
-                const response = await StorageController.uploadFile( image, "albums", uuidv4() );
-                const url = await StorageController.getUrlFile(response.metadata.fullPath);
+                const { image, name, artist, year } = formData;
 
-                await AlbumController.create(url, name, artist);
+                await AlbumController.create(image.name, name, artist, year);
                 onClose();
 
             } catch (error) {
@@ -91,6 +87,13 @@ export function AddAlbumForm(props) {
                         value={formik.values.artist}
                         onChange={(e, data) => formik.setFieldValue("artist", data.value)}
                         error={formik.errors.artist}
+                    />
+                    <Form.Input 
+                        name="year" 
+                        placeholder="Año del album"
+                        value={formik.values.year}
+                        onChange={formik.handleChange}
+                        error={formik.errors.year}
                     />
                 </div>
 

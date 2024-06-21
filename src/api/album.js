@@ -6,13 +6,15 @@ import { db } from "../utils";
 export class Album{
     collectionName = 'albums';
 
-    async create(image, name, artist){
+    async create(image, name, artist, year){
         try {
             const id = uuidv4();
+            const slug = image.substring(0, image.lastIndexOf('.'));
             const createdAt = new Date();
             const data = {
                 id,
                 name,
+                slug,
                 image,
                 artist,
                 createdAt

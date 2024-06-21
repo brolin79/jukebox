@@ -43,7 +43,7 @@ export function Slider(props) {
                             <div className="slider__item-block-play">
                                 <Image
                                     src={item.image}
-                                    alt={item.bame}
+                                    alt={item.name}
                                     style={{ height: size }}
                                 />
                                 <Icon name="play circle outline" />

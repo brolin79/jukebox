@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react';
 import { Artist, Album } from  '../api';
 import { useParams } from 'react-router-dom';
 import { BannerArtist } from '../components/Artist';
-import { Slider } from '../components/Shared';
+import { ListAlbums } from '../components/Albums';
 import '../scss/pages/ArtistDetail.scss';
 
 const ArtistController = new Artist();
@@ -35,11 +35,11 @@ export function ArtistDetail (props) {
         <div className='artist-page'>
 
 
-            <BannerArtist image={artist.image} name={artist.name} />
+            <BannerArtist id={artist.id} name={artist.name} image={artist.image} />
 
             <div className='artist-page__slider'>
                 <h2>Albumes</h2>
-                <Slider data={albums} basePath="album_detail" />
+                <ListAlbums albums={albums} />
             </div>
 
         </div>
