@@ -5,7 +5,7 @@
 
     >h1 {
         font-size: 35px;
-        color: $font-light;
+        color: $font-blue;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -46,7 +46,7 @@
 
     &__options {
         margin-top: 50px;
-        color: $font-light;
+        color: $font-blue;
         text-align: center;
         font-size: 16px;
         text-transform: uppercase;
@@ -59,7 +59,7 @@
             }
 
             &:last-of-type {
-                color: $font-grey;
+                color: $font-blue;
 
                 span {
                     text-decoration: underline;

@@ -1,7 +1,7 @@
 @import "~/src/scss/index";
 
 $footerHeight: 100px;
-$menuWidth: 300px;
+$menuWidth: 200px;
 
 .logged-layout {
     height: 100vh;
@@ -14,7 +14,7 @@ $menuWidth: 300px;
 
     &__sidebar {
         background-color: $background-dark;
-        width: 300px;
+        width: 200px;
     }
 
     &__children {

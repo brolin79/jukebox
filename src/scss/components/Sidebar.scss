@@ -14,17 +14,17 @@
         .item{
             border-radius: 0 !important;
             border-left: 4px solid transparent;
-            color: $font-grey !important;
+            color: $font-blue !important;
 
             i{
-                color: $font-grey !important;
+                color: $font-blue !important;
             }
 
             &.active{
                 border-color: $primary-color !important;
-                color: $font-light !important;
+                color: $font-blue !important;
                 i {
-                    color: $font-light !important;
+                    color: $font-blue !important;
                 }
             }
         }

@@ -1,20 +1,23 @@
 @import "~/src/scss/index";
 
-.slick {
-  .slick__item {
+.slider {
+  .slider__item {
     padding: 0 10px;
     cursor: pointer;
+    text-align: center;
 
     img {
-      max-width: 50px !important;
+      width: 150px !important;
+      height: 150px !important;
       object-fit: cover;
+      margin: auto;
     }
 
     h3 {
       margin-top: 10px;
       font-size: 15px;
       font-weight: 100;
-      color: $font-light;
+      color: $font-blue;
     }
 
     &-block-play {
