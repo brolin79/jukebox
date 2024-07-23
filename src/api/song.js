@@ -15,6 +15,7 @@ import { db } from "../utils";
 export class Song {
   collectionName = "songs";
 
+  
   async create(name, album, file) {
     try {
       const id = uuidv4();
@@ -30,10 +31,9 @@ export class Song {
 
   async obtainAllByAlbum(idAlbum) {
     try {
-      const whereRef = where("album", "==", idAlbum);
       const collectionRef = collection(db, this.collectionName);
-      const queryRef = query(collectionRef, whereRef);
-
+      const queryRef = query(collectionRef, where("album", "==", idAlbum), orderBy("number") );
+      
       const snapshot = await getDocs(queryRef);
       return map(snapshot.docs, (doc) => doc.data());
     } catch (error) {

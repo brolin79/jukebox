@@ -25,4 +25,11 @@
         justify-content: space-between;
     }
 
+    &__area {
+        width: 100%;
+        min-height: 250px;
+        display: flex;
+        padding-bottom: 10px;
+    }
+
 }

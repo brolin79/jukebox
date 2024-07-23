@@ -5,3 +5,4 @@ export { AlbumDetail } from "./AlbumDetail";
 export { Profile } from "./Profile";
 export { Artists } from "./Artists";
 export { ArtistDetail } from "./ArtistDetail";
+export { Test } from "./Test";

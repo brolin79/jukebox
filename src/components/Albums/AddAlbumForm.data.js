@@ -6,6 +6,7 @@ export function initialValues () {
         name: "",
         artist: "",
         year: "",
+        canciones: ""
     };
 }
 
@@ -15,5 +16,6 @@ export function validationSchema () {
         name: Yup.string().required("El nombre del album es obligatorio"),
         artist: Yup.string().required("El artista del album es obligatorio"),
         year: Yup.string().required("El año del album es obligatorio"),
+        canciones: Yup.string().required("Las canciones del album son obligatorias")
     });
 }

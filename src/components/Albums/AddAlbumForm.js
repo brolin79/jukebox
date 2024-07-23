@@ -39,9 +39,9 @@ export function AddAlbumForm(props) {
         validateOnChange: false,
         onSubmit: async (formData) => {
             try {
-                const { image, name, artist, year } = formData;
+                const { image, name, artist, year, canciones } = formData;
 
-                await AlbumController.create(image.name, name, artist, year);
+                await AlbumController.create(image.name, name, artist, year, canciones);
                 onClose();
 
             } catch (error) {
@@ -97,6 +97,16 @@ export function AddAlbumForm(props) {
                     />
                 </div>
 
+            </div>
+
+            <div>
+                <Form.TextArea className='add-album-form__area'
+                    name="canciones"
+                    placeholder="01 Canción 1.mp3\n 02 Canción.mp3 2\n"
+                    value={formik.values.canciones}
+                    onChange={formik.handleChange}
+                    error={formik.errors.canciones}
+                />
             </div>
 
             <Form.Button type="submit" primary fluid loading={formik.isSubmitting}>Crear album</Form.Button>

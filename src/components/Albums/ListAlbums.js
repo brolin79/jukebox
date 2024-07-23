@@ -22,9 +22,9 @@ export function ListAlbums(props) {
             <Grid.Row columns={6}>
                 {map(albums, (album) => (
                     <Grid.Column
-                        key={album.id}
+                        key={album.idAlbum}
                         as={Link}
-                        to={`/album_detail/${album.id}`}
+                        to={`/album_detail/${album.idAlbum}`}
                         className="list-albums__album"
                     >
                         <Image 

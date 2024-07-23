@@ -5,23 +5,56 @@ import { db } from "../utils";
 
 export class Album{
     collectionName = 'albums';
+    collectionAux = 'songs';
 
-    async create(image, name, artist, year){
+    async create(image, name, artist, year, canciones){
         try {
-            const id = uuidv4();
+            // generamos primero el album
+            const idAlbum = uuidv4();
             const slug = image.substring(0, image.lastIndexOf('.'));
             const createdAt = new Date();
             const data = {
-                id,
+                idAlbum,
                 name,
                 slug,
                 image,
                 artist,
+                year,
                 createdAt
             };
-
-            const artistDoc = doc(db, this.collectionName, id);
+            
+            const artistDoc = doc(db, this.collectionName, idAlbum);
             await setDoc(artistDoc, data);
+
+            
+            
+            // despues partimos las canciones
+            const aCanciones = canciones.split('\n').map((cancion) => cancion.trim());
+    
+            for (const cancion of aCanciones) {
+                // cogemos los 3 primeros caracteres y pasamos a integer
+                const numero = cancion.substring(0, 2);
+                const numeroInt = parseInt(numero, 10);
+                // cogemos solo la cancion
+                const nombre = cancion.substring(3);
+                // quitamos .mp3 del nombre
+                const nombreSinMp3 = nombre.substring(0, nombre.length - 4);
+                // la ruta del archivo
+                const url = window.location.origin + "/storage/" + artist + "/" + slug + "/" + cancion;
+    
+                const dataAux = {
+                    id: uuidv4(),
+                    album: idAlbum,
+                    number: numeroInt,
+                    name: nombreSinMp3,
+                    file: url
+                };
+
+                const songDoc = doc(db, this.collectionAux, dataAux.id);
+                await setDoc(songDoc, dataAux);
+
+            }
+
 
         } catch (error) {
             console.log(error);

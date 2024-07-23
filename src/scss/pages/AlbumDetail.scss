@@ -2,7 +2,14 @@
 
 .album-detail{
 
-    margin: 20px 40px;
+    display: flex;
+    margin: 20px;
 
+    &__info {
+        padding-right: 20px;
+    }
 
+    &__songs {
+        padding-left: 20px;
+    }
 }

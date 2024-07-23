@@ -14,6 +14,7 @@ export function AlbumDetail () {
     const [album, setAlbum] = useState(null);
     const [songs, setSongs] = useState(null);
     
+    
     useEffect(() => {
         (async () => {
             const response = await AlbumController.getAlbum(id);
@@ -38,8 +39,12 @@ export function AlbumDetail () {
 
     return (
         <div className='album-detail'>
-            <AlbumInfo album={album} />
-            <ListSongs songs={songs} miniature={album.image} />
+            <div className='album-detail__info'>
+                <AlbumInfo album={album} />
+            </div>
+            <div className='album-detail__songs'>
+                <ListSongs songs={songs} album={album} />
+            </div>
         </div>
     );
 }
