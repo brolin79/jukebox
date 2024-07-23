@@ -2,7 +2,7 @@
 
 .home-page {
   &__banner {
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +10,7 @@
   }
 
   &__slider {
-    margin: 50px;
+    margin: 15px 50px;
 
     > h2 {
       color: $font-blue;

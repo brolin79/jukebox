@@ -4,16 +4,16 @@ import { Slider } from "../components/Shared";
 import { bannerHome } from "../assets";
 import "../scss/pages/Home.scss";
 
-//const artistController = new Artist();
-//const albumController = new Album();
-//const songController = new Song();
+const artistController = new Artist();
+const albumController = new Album();
+const songController = new Song();
 
 export function Home() {
   const [artists, setArtists] = useState(null);
   const [albums, setAlbums] = useState(null);
   const [songs, setSongs] = useState(null);
 
-  /*
+  
   useEffect(() => {
     (async () => {
       try {
@@ -54,7 +54,7 @@ export function Home() {
       }
     })();
   }, []);
-  */
+  
 
   return (
     <div className="home-page">
@@ -73,10 +73,6 @@ export function Home() {
         {albums && <Slider data={albums} basePath="albums" />}
       </div>
 
-      <div className="home-page__slider">
-        <h2>Ultimas canciones</h2>
-        {songs && <Slider data={songs} song />}
-      </div>
     </div>
   );
 }

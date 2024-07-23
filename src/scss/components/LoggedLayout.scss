@@ -19,6 +19,7 @@ $menuWidth: 200px;
 
     &__children {
         width: calc(100% - $menuWidth);
+        overflow-y: scroll;
     }
 
     &::-webkit-scrollbar {

@@ -36,11 +36,11 @@ export class Artist{
         }
     }
 
-    async getLast(){
+    async getLastArtists(){
         try {
             const docRef = collection(db, this.collectionName);
             const orderByRef = orderBy("createdAt", "desc");
-            const limitRef = limit(20);
+            const limitRef = limit(10);
             const queryRef = query(docRef, orderByRef, limitRef);
             const snapshot = await getDocs(queryRef);
             return map(snapshot.docs, doc => doc.data());

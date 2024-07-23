@@ -11,7 +11,7 @@ export function Artists () {
 
     useEffect(() => {
         (async () => {
-            const response = await ArtistController.getLast();
+            const response = await ArtistController.getLastArtists();
             setArtists(response);
         })();
     }, []);

@@ -3,7 +3,6 @@ import { Image, Icon } from 'semantic-ui-react';
 import Slick from 'react-slick';
 import { map } from 'lodash';
 import { Link } from 'react-router-dom';
-import { usePlayer } from "../../hooks";
 import '../../scss/components/Slider.scss';
 
 
@@ -20,7 +19,6 @@ export function Slider(props) {
     const [size, setSize] = useState(0);
     const [loadCompleted, setLoadCompleted] = useState(false);
     const itemRef = useRef();
-    const { playSong } = usePlayer();
 
     useEffect(() => {
         if (itemRef.current) {
@@ -31,40 +29,44 @@ export function Slider(props) {
     return (
         <Slick {...settings} className="slider">
             {map(data, (item) => {
-                if (song) {
+
+                if (basePath === 'artists') {
+                    const image = window.location.origin + "/storage/" + item.id + "/" + item.image;
+                    const url = "artist_detail/" + item.id;
+
                     return (
-                        <div
+                        <Link
+                            to={url}
                             key={item.id}
                             className="slider__item"
                             ref={itemRef}
                             onLoad={() => setLoadCompleted(true)}
-                            onClick={() => playSong(item, item.image)}
                         >
-                            <div className="slider__item-block-play">
-                                <Image
-                                    src={item.image}
-                                    alt={item.name}
-                                    style={{ height: size }}
-                                />
-                                <Icon name="play circle outline" />
-                            </div>
+                            <Image src={image} alt={item.name} style={{ height: size }} />
                             <h3>{item.name}</h3>
-                        </div>
+                        </Link>
                     );
                 }
 
-                return (
-                    <Link
-                        to={`/${basePath}/${item.id}`}
-                        key={item.id}
-                        className="slider__item"
-                        ref={itemRef}
-                        onLoad={() => setLoadCompleted(true)}
-                    >
-                        <Image src={item.image} alt={item.name} style={{ height: size }} />
-                        <h3>{item.name}</h3>
-                    </Link>
-                );
+                if (basePath === 'albums') {
+                    const image = window.location.origin + "/storage/" + item.artist + "/" + item.image;
+                    const url = "album_detail/" + item.idAlbum;
+
+                    return (
+                        <Link
+                            to={url}
+                            key={item.id}
+                            className="slider__item"
+                            ref={itemRef}
+                            onLoad={() => setLoadCompleted(true)}
+                        >
+                            <Image src={image} alt={item.name} style={{ height: size }} />
+                            <h3>{item.name}</h3>
+                        </Link>
+                    );
+                }
+
+
             })}
         </Slick>
     );

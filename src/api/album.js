@@ -1,4 +1,4 @@
-import { setDoc, doc, collection, getDocs, getDoc, where, query } from "firebase/firestore";
+import { setDoc, doc, collection, getDocs, getDoc, where, query,  limit, orderBy } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { map } from 'lodash';
 import { db } from "../utils";
@@ -90,6 +90,20 @@ export class Album{
             const whereRef = where('artist', '==', id);
             const docRef = collection(db, this.collectionName);
             const queryRef = query(docRef, whereRef);
+            const snapshot = await getDocs(queryRef);
+            return map(snapshot.docs, doc => doc.data());
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getLastAlbums(){
+        try {
+            const docRef = collection(db, this.collectionName);
+            const orderByRef = orderBy("createdAt", "desc");
+            const limitRef = limit(10);
+            const queryRef = query(docRef, orderByRef, limitRef);
             const snapshot = await getDocs(queryRef);
             return map(snapshot.docs, doc => doc.data());
             

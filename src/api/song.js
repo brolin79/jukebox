@@ -41,7 +41,7 @@ export class Song {
     }
   }
 
-  async getLastSongs(limitItems = 20) {
+  async getLastSongs(limitItems = 10) {
     try {
       const collectionRef = collection(db, this.collectionName);
       const orderByRef = orderBy("created_at", "desc");
