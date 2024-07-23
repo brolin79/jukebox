@@ -101,7 +101,7 @@ export class Album{
     async getLastAlbums(){
         try {
             const docRef = collection(db, this.collectionName);
-            const orderByRef = orderBy("createdAt", "desc");
+            const orderByRef = orderBy("createdAt", "asc");
             const limitRef = limit(10);
             const queryRef = query(docRef, orderByRef, limitRef);
             const snapshot = await getDocs(queryRef);
