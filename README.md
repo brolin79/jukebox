@@ -1,4 +1,4 @@
-Proyecto del curso React / Electron para crear tu propia aplicacion musical
+Proyecto del curso React / Electron para crear tu propia aplicacion musical con su propio reproductor
 
 ![jukebox_2](https://github.com/user-attachments/assets/c5de0ee9-99e3-488f-8664-11bec0634dbf)
 
