@@ -15,6 +15,7 @@ function createWindow() {
     width: 1500,
     height: 1000,
     title: "JUKEBOX",
+    autoHideMenuBar: true,
     // titleBarStyle: "hiddenInset",
     // resizable: false,
     // kiosk: true
@@ -28,6 +29,7 @@ function createWindow() {
   if (isDev) mainWindow.webContents.openDevTools();
 
   mainWindow.on("closed", () => (mainWindow = null));
+  //mainWindow.webContents.openDevTools()
 }
 
 app.on("ready", createWindow);
@@ -43,3 +45,4 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
