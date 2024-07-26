@@ -1,5 +1,7 @@
-Proyecto del curso React / Electron para crear tu propia aplicacion musical con su propio reproductor
+Proyecto de un curso para crear una App de Escritorio como Spotify usando React JS, Electron JS, Firebase y SASS
 
-![jukebox_2](https://github.com/user-attachments/assets/c5de0ee9-99e3-488f-8664-11bec0634dbf)
+![jukebox_2](https://github.com/user-attachments/assets/32b8d56b-ab8b-461d-8e40-325a84d64429)
 
-![jukebox_3](https://github.com/user-attachments/assets/09a2c0bb-83d6-4cec-88d5-53354a9228cc)
+Se pueden subir los artistas, albumes y sus canciones, las cuales se pueden escuchar con el propio reproductor de la app
+
+![jukebox_3](https://github.com/user-attachments/assets/34b046fd-d78d-4586-b782-4d2e62d00381)
